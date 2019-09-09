@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+
+	<bean id="numbers" class="com.dev.spring.core.beans.PhoneNumbers">
+		<property name="numbers">
+			<list>
+				<value>1234</value>
+				<value>1235</value>
+				<value>1236</value>
+				<value>1231</value>
+			</list>
+		</property>
+		<property name="users">
+			<list>
+				<ref bean="user1" />
+				<ref bean="user2" />
+			</list>
+		</property>
+
+	</bean>
+
+	<bean id="user1" class="com.dev.spring.core.beans.User">
+		<property name="userId" value="101"></property>
+		<property name="firstName" value="Aatish"></property>
+		<property name="lastName" value="Azad"></property>
+		<property name="password" value="root"></property>
+	</bean>
+
+	<bean id="user2" class="com.dev.spring.core.beans.User">
+		<property name="userId" value="102"></property>
+		<property name="firstName" value="Blake"></property>
+		<property name="lastName" value="Ryder"></property>
+		<property name="password" value="root"></property>
+	</bean>
+
+</beans>
